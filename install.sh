@@ -22,9 +22,8 @@ echo "---------------------------------------------------------------"
 
 
 echo "欢迎使用Misstar Tools工具箱"
-echo "当前版本为2.17.05.21"
-echo "此版本为MT2.0终结版，由GitHub分流，安装可能出现卡顿"
-echo "MT工具箱官方问题反馈&技术交流QQ群：523723125/157558789，将会在MT3.0正式发布后开放免费安装"
+echo "当前版本为2.17.05.21,由GitHub分流"
+echo "问题反馈&技术交流QQ群：523723125/157558789"
 
 ## Check The Router Hardware Model 
 model=$(cat /proc/xiaoqiang/model)
@@ -159,7 +158,7 @@ if [ $? -eq 0 ];then
     counter=`curl "http://cloud.lifeheart.cn:188/miwifi/MT/tools/counter.php?sha1sum=$snmd5" -s | awk -F "\"" '{print $4}'`
     uci set misstar.misstar.counter=$counter
     uci commit misstar
-    echo -e "安装完成，请刷新网页。"
+    echo -e "安装完成，请刷新路由器后台。"
 else 
     echo "安装失败。"
     exit
